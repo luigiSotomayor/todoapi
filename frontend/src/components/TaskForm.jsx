@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import '..styles/taskform.css';
+import '../styles/taskform.css';
 
 
 export default function TaskForm(){
@@ -28,16 +28,17 @@ export default function TaskForm(){
     return(
         <form className='task-form'>
             <div className='task-input'>
-                <label htmlFor="name">Nombre de la tarea</label>
+                <label htmlFor="name">Nombre de la tarea: </label>
                 <input ref={nameRef} type="text" id='name' placeholder='Nombre...' />
             </div>
 
             <div className='task-input'>
-                <label htmlFor="text">Tarea</label>
+                <label htmlFor="text">Tarea: </label>
                 <textarea ref={textRef} id="text" placeholder='Tarea...'></textarea>
             </div>
 
             <div  className='task-input'>
+                <label htmlFor="status-task">Estado: </label>
                 <select defaultValue="Pending" ref={statusRef} className='status-task'>
                     <option value="Pending">Pendiente</option>
                     <option value="Progress">En progreso</option>
