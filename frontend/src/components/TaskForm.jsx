@@ -38,7 +38,6 @@ export default function TaskForm(){
             </div>
 
             <div  className='task-input'>
-                <label htmlFor="status-task">Estado: </label>
                 <select defaultValue="Pending" ref={statusRef} className='status-task'>
                     <option value="Pending">Pendiente</option>
                     <option value="Progress">En progreso</option>
