@@ -33,13 +33,14 @@ function App() {
       To-Do App
       <img className="icon-app" src={agenda} alt="icono de agenda" />
     </h1>
+    <button onClick={() => setShowForm(true)}  className='create-button'>Añadir tarea</button>
      {loading ? <p>Cargando...</p> : 
       ( !tasks || tasks.length === 0 ? <h3>Crea una tarea para empezar</h3> : (tasks?.map((task, i) => 
         <Task key={i} task={task} setTasks={setTasks}/>
       )))}
 
       {showForm && <TaskForm/>}
-      <button onClick={() => setShowForm(true)}  className='create-button'>+</button>
+      <button onClick={() => setShowForm(true)}  className='create-button'>Añadir tarea</button>
     </div>
   );
 }

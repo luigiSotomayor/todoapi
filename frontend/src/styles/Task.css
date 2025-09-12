@@ -1,0 +1,35 @@
+.task {
+    border-radius: 8px;
+    border: 2px solid darkgrey;
+    padding: 10px;
+    margin: 10px; 
+    width: calc(100% - 40%);
+    box-shadow: 
+        0 0 10px rgba(0, 200, 255, 0.6),
+        0 0 20px rgba(0, 200, 255, 0.5),
+        0 0 40px rgba(0, 200, 255, 0.4);
+}
+
+.delete-task {
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: conic-gradient(at bottom left, #dd4949, #ceb1b1, #fecaca);
+    margin: 0 auto;
+    display: block;
+}
+
+.task-name {
+  font-weight: bold;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+.task-status {
+    font-style: italic;
+    color: #eea3a3;
+    font-size: small;
+}
