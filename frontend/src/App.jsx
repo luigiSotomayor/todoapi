@@ -8,6 +8,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [editingTask, setEditingTask] = useState(null);
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -26,6 +27,11 @@ function App() {
     fetchTasks();
   }, []);
 
+  const handleEditTask = (task) => {
+    setEditingTask(task);
+    setShowForm(true);
+  };
+
   return (
   <div className="App">
     <h1 className="title-app">
@@ -35,7 +41,11 @@ function App() {
     </h1>
 
     {showForm ? (
-      <TaskForm />
+      <TaskForm 
+        taskToEdit={editingTask}
+        setTasks={setTasks}
+        setShowForm={setShowForm}
+      />
     ) : (
       <>
         <button
@@ -52,7 +62,12 @@ function App() {
             <h3>Crea una tarea para empezar</h3>
           ) : (
             tasks.map((task, i) => (
-              <Task key={i} task={task} setTasks={setTasks} />
+              <Task 
+                key={i} 
+                task={task} 
+                setTasks={setTasks} 
+                onEdit={handleEditTask} 
+              />
             ))
           )
         )}

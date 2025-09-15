@@ -2,7 +2,7 @@ import "../styles/Task.css";
 import borrar from "../assets/papelera-xmark.png";
 import editar from "../assets/editar.png";
 
-export default function Task({ task, setTasks }) {
+export default function Task({ task, setTasks, onEdit }) {
   const deleteTask = async () => {
     try {
       const response = await fetch(`http://localhost:3000/tasks/${task._id}`, {
@@ -24,32 +24,8 @@ export default function Task({ task, setTasks }) {
     }
   };
 
-  const editTask = async () => {
-    try {
-      const response = await fetch(`http://localhost:3000/tasks/${task._id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: task.name,
-          text: task.text,
-          status: task.status,
-        }),
-      });
-      const res = await response.json();
-
-      if (response.ok) {
-        setTasks((prev) =>
-          prev.map((t) => (t._id === task._id ? { ...t, ...res } : t))
-        );
-        alert("Tarea actualizada");
-      } else {
-        alert(res.message);
-      }
-    } catch (error) {
-      console.log("Error al actualizar la tarea", error);
-    }
+  const editTask = () => {
+    onEdit(task);
   }
 
   return (
