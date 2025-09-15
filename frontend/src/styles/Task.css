@@ -10,15 +10,33 @@
         0 0 40px rgba(0, 200, 255, 0.4);
 }
 
-.delete-task {
-    width: 120px;
-    height: 40px;
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.delete-task, .edit-task {
+    width: 50px;
+    height: 50px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     background: conic-gradient(at bottom left, #dd4949, #ceb1b1, #fecaca);
     margin: 0 auto;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-app {
+    max-width: 25px;
+    max-height: 30px;
+    display: inline-block;
 }
 
 .task-name {
