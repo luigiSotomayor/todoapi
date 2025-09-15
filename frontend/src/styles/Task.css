@@ -1,53 +1,67 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  border-radius: 8px;
+  border: 2px solid darkgrey;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.6), 0 0 20px rgba(0, 200, 255, 0.5),
+    0 0 40px rgba(0, 200, 255, 0.4);
+}
+
 .task {
-    border-radius: 8px;
-    border: 2px solid darkgrey;
-    padding: 10px;
-    margin: 10px; 
-    width: calc(100% - 40%);
-    box-shadow: 
-        0 0 10px rgba(0, 200, 255, 0.6),
-        0 0 20px rgba(0, 200, 255, 0.5),
-        0 0 40px rgba(0, 200, 255, 0.4);
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 10px; 
+  width: 100%;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 2px solid darkgrey;
+  width: 100%;
 }
 
 .button-container {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.delete-task, .edit-task {
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    background: conic-gradient(at bottom left, #dd4949, #ceb1b1, #fecaca);
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.delete-task,
+.edit-task {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background: conic-gradient(at bottom left, #dd4949, #ceb1b1, #fecaca);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .icon-app {
-    max-width: 25px;
-    max-height: 30px;
-    display: inline-block;
+  max-width: 25px;
+  max-height: 30px;
+  display: inline-block;
 }
 
 .task-name {
   font-weight: bold;
-  padding-bottom: 8px;
+  padding: 0px 10px 8px 0px;
   margin-bottom: 10px;
-  border-bottom: 2px solid #ccc;
+  border-right: 2px solid #ccc;
 }
 
 .task-status {
-    font-style: italic;
-    color: #eea3a3;
-    font-size: small;
+  font-style: italic;
+  color: #eea3a3;
+  font-size: small;
 }

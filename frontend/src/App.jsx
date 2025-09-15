@@ -61,14 +61,16 @@ function App() {
           (!tasks || tasks.length === 0) ? (
             <h3>Crea una tarea para empezar</h3>
           ) : (
-            tasks.map((task, i) => (
+            <section className="task-list">
+              {tasks.map((task, i) => (
               <Task 
                 key={i} 
                 task={task} 
                 setTasks={setTasks} 
                 onEdit={handleEditTask} 
               />
-            ))
+            ))}
+            </section>
           )
         )}
         <button
